@@ -8,10 +8,17 @@ describe("<TopNav />", () => {
     shallow(<TopNav />);
   });
   
-  it('Should activate callback when clicked', () => {
+  it('Should activate info callback when clicked', () => {
     const callback = jest.fn()
     const wrapper = mount(<TopNav onInfo={callback} />)
       wrapper.find('.what').simulate('click', { preventDefault() {} });
+      expect(callback).toHaveBeenCalled();
+  });
+
+  it('Should activate new game callback when clicked', () => {
+    const callback = jest.fn()
+    const wrapper = mount(<TopNav onNewGame={callback} />)
+      wrapper.find('.new').simulate('click', { preventDefault() {} });
       expect(callback).toHaveBeenCalled();
   });
 
