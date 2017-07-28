@@ -24,9 +24,13 @@ export default class Header extends React.Component {
     if (this.state.showInfoModal) {
       infoModal = <InfoModal onClose={() => this.toggleInfoModal()} />;
     }
-    console.log('some stuff' + this.props.onNewGame)
     return (
       <header>
+        <TopNav
+          onInfo={() => this.toggleInfoModal()}
+          onNewGame={this.props.onNewGame}
+        />
+        {infoModal}
         <h1>HOT or COLD</h1>
       </header>
     );
