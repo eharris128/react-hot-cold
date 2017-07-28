@@ -10,7 +10,7 @@ describe("<TopNav />", () => {
   
   it('Should activate info callback when clicked', () => {
     const callback = jest.fn()
-    const wrapper = mount(<TopNav onInfo={callback} />)
+    const wrapper = shallow(<TopNav onInfo={callback} />)
       wrapper.find('.what').simulate('click', { preventDefault() {} });
       expect(callback).toHaveBeenCalled();
   });
