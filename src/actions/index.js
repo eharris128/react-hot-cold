@@ -17,6 +17,24 @@ export const newGame = newGame => ({
   guesses: []
 })
 
+export const WHAT_BUTTON = 'WHAT_BUTTON';
+export const whatButton = whatButton => ({
+  type: WHAT_BUTTON,
+  view: 'infoPage'
+})
+
+export const MIN_BUTTON = 'MIN_BUTTON';
+export const minButton = minButton => ({
+  type: MIN_BUTTON,
+  view: 'startPage'
+})
+
+export const SUBMIT = 'SUBMIT';
+export const submit = guesses => ({
+  type: SUBMIT,
+  guesses
+  //add feedback
+})
 
 
 
