@@ -1,8 +1,5 @@
 import {createStore} from 'redux'
 
+import {hotColdReducer} from './reducers';
 
-// Change trelloReducer reference to match the name of our reducer we build.
-
-// import {trelloReducer} from './reducers';
-
-// export default createStore(trelloReducer);
+export default createStore(hotColdReducer);

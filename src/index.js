@@ -11,3 +11,13 @@ ReactDOM.render(
     <Game />,
     document.getElementById('root')
 );
+
+import store from './store';
+
+import {newGame} from './actions';
+
+store.dispatch(newGame());
+console.log(store.getState());
+
+// store.dispatch(newGame());
+// console.log(store.getState());
