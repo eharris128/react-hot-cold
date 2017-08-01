@@ -6,28 +6,29 @@ import './reset.css';
 import './index.css';
 
 import Game from './components/game';
+// import store from './store';
 
 ReactDOM.render(
     <Game />,
     document.getElementById('root')
 );
 
-import store from './store';
 
-import {newGame, whatButton, minButton, submit} from './actions';
 
-console.log(store.getState());
-store.dispatch(newGame());
-console.log(store.getState());
+// import {newGame, whatButton, minButton, submit} from './actions';
 
-console.log('WHATBUTTON>>>>>>>>>>>>>>>', store.getState());
-store.dispatch(whatButton());
-console.log(store.getState());
-
-console.log('MinBUTTON>>>>>>>>>>>>>>>', store.getState());
-store.dispatch(minButton());
-console.log(store.getState());
-
-store.dispatch(submit(78));
+// console.log(store.getState());
 // store.dispatch(newGame());
-console.log('SUBMIT', store.getState());
+// console.log(store.getState());
+
+// console.log('WHATBUTTON>>>>>>>>>>>>>>>', store.getState());
+// store.dispatch(whatButton());
+// console.log(store.getState());
+
+// console.log('MinBUTTON>>>>>>>>>>>>>>>', store.getState());
+// store.dispatch(minButton());
+// console.log(store.getState());
+
+// store.dispatch(submit(78));
+// store.dispatch(newGame());
+// console.log('SUBMIT', store.getState());
