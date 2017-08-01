@@ -8,23 +8,14 @@ import "./header.css";
 
 export class Header extends React.Component {
 
-  toggleInfoModal() {
-    this.setState({
-      showInfoModal: !this.state.showInfoModal
-    });
-  }
-
   render() {
     let infoModal;
-    if (this.state.showInfoModal) {
-      infoModal = <InfoModal onClose={() => this.toggleInfoModal()} />;
+    if (this.props.showInfo) {
+      infoModal = <InfoModal />;
     }
     return (
       <header>
-        <TopNav
-          onInfo={() => this.toggleInfoModal()}
-          onNewGame={this.props.onNewGame}
-        />
+        <TopNav />
         {infoModal}
         <h1>HOT or COLD</h1>
       </header>
