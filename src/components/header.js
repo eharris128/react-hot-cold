@@ -1,17 +1,12 @@
 import React from "react";
+import {connect} from "react-redux"
 
 import TopNav from "./top-nav";
 import InfoModal from "./info-modal";
 
 import "./header.css";
 
-export default class Header extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showInfoModal: false
-    };
-  }
+export class Header extends React.Component {
 
   toggleInfoModal() {
     this.setState({
@@ -36,3 +31,9 @@ export default class Header extends React.Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  showInfo: state.showInfo
+});
+
+export default connect(mapStateToProps)(Header);
