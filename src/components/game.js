@@ -23,44 +23,41 @@ export default class Game extends React.Component {
     });
   }
 
-  guess(guess) {
-    guess = parseInt(guess, 10);
-    if (isNaN(guess)) {
-      this.setState({
-        feedback: "Please enter a valid number"
-      });
-      return;
-    }
+  // guess(guess) {
+  //   guess = parseInt(guess, 10);
+  //   if (isNaN(guess)) {
+  //     this.setState({
+  //       feedback: "Please enter a valid number"
+  //     });
+  //     return;
+  //   }
 
-    const difference = Math.abs(guess - this.state.correctAnswer);
+  //   const difference = Math.abs(guess - this.state.correctAnswer);
 
-    let feedback;
-    if (difference >= 50) {
-      feedback = "You're Ice Cold...";
-    } else if (difference >= 30) {
-      feedback = "You're Cold...";
-    } else if (difference >= 10) {
-      feedback = "You're Warm";
-    } else if (difference >= 1) {
-      feedback = "You're Hot!";
-    } else {
-      feedback = "You got it!";
-    }
+  //   let feedback;
+  //   if (difference >= 50) {
+  //     feedback = "You're Ice Cold...";
+  //   } else if (difference >= 30) {
+  //     feedback = "You're Cold...";
+  //   } else if (difference >= 10) {
+  //     feedback = "You're Warm";
+  //   } else if (difference >= 1) {
+  //     feedback = "You're Hot!";
+  //   } else {
+  //     feedback = "You got it!";
+  //   }
 
-    this.setState({
-      feedback,
-      guesses: [...this.state.guesses, guess]
-    });
-  }
+  //   this.setState({
+  //     feedback,
+  //     guesses: [...this.state.guesses, guess]
+  //   });
+  // }
 
   render() {
     return (
       <div>
         <Header onNewGame={() => this.newGame()} />
-        <GuessSection
-          feedback={this.state.feedback}
-          onGuess={guess => this.guess(guess)}
-        />
+        <GuessSection />
         <GuessCount />
         <GuessList />
       </div>
