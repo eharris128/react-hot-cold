@@ -4,31 +4,28 @@ import {connect} from "react-redux"
 import "./top-nav.css";
 
 export class TopNav extends React.Component {
-  onNewGame(event) {
-    event.preventDefault();
-    if (this.props.onNewGame) {
-      this.props.onNewGame();
-    }
-  }
-
-  onInfo(event) {
-    event.preventDefault();
-    if (this.props.onInfo) {
-      this.props.onInfo();
-    }
-  }
 
   render() {
     return (
       <nav>
         <ul className="clearfix">
           <li>
-            <a className="what" href="#" onClick={e => {this.onInfo(e)}}>
+            <a className="what" href="#" 
+              onClick={e => {
+                        e.preventDefault();
+                        this.props.dispatch(toggleInfo());
+                        }
+                      }>
               What?
             </a>
           </li>
           <li>
-            <a className="new" href="#" onClick={e => this.onNewGame(e)}>
+            <a className="new" href="#" 
+              onClick={e => {
+                        e.preventDefault();
+                        this.props.dispatch(newGame());
+                        }
+                      }>
               + New Game
             </a>
           </li>
@@ -38,8 +35,4 @@ export class TopNav extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  showInfo: state.showInfo
-});
-
-export default connect(mapStateToProps)(TopNav);
+export default connect()(TopNav);
