@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {toggleInfo} from "../actions"
 
 import './info-modal.css';
 
