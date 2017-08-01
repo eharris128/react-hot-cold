@@ -1,8 +1,9 @@
 import React from "react";
+import {connect} from "react-redux"
 
 import "./top-nav.css";
 
-export default class TopNav extends React.Component {
+export class TopNav extends React.Component {
   onNewGame(event) {
     event.preventDefault();
     if (this.props.onNewGame) {
@@ -36,3 +37,9 @@ export default class TopNav extends React.Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  showInfo: state.showInfo
+});
+
+export default connect(mapStateToProps)(TopNav);

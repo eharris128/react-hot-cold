@@ -32,7 +32,7 @@ export class InfoModal extends React.Component {
     }
 }
 // replace on close
-const mapStateToProps = () => ({
+const mapStateToProps = (state) => ({
     showInfo: state.showInfo
 })
 
