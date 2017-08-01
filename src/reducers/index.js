@@ -2,7 +2,7 @@ import * as actions from '../actions'
 
 const initialState = {
   // view: 'startPage',
-  showInfo: 'false',
+  showInfo: false,
   correctAnswer: Math.floor(Math.random() * 100) + 1,
   feedback: 'Make your Guess!',
   guesses: [14, 98]
