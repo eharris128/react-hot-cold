@@ -11,10 +11,10 @@
 export const NEW_GAME = 'NEW_GAME';
 export const newGame = newGame => ({
   type: NEW_GAME,
-  view: 'startPage',
+  // view: 'startPage',
   correctAnswer: Math.floor(Math.random() * 100) + 1,
-  feedback: 'Make your Guess!',
-  guesses: []
+  // feedback: 'Make your Guess!',
+  // guesses: []
 })
 
 export const WHAT_BUTTON = 'WHAT_BUTTON';

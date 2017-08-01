@@ -16,6 +16,7 @@ const initialState = {
 
 function displayFeedback(feedback, state, input) {
     const difference = Math.abs(input - state.correctAnswer);
+    // let feedback;
     if (difference >= 50) {
       feedback = "You're Ice Cold...";
     } else if (difference >= 30) {
