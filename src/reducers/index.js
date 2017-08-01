@@ -5,7 +5,7 @@ const initialState = {
   showInfo: 'false',
   correctAnswer: Math.floor(Math.random() * 100) + 1,
   feedback: 'Make your Guess!',
-  guesses: [14, 35, 98]
+  guesses: [14, 98]
 }
 
 function displayFeedback(state, input) {
@@ -28,14 +28,14 @@ function displayFeedback(state, input) {
 export const hotColdReducer = (state=initialState, action) => {
   if (action.type === actions.NEW_GAME) {
     return Object.assign({}, state, {
-      view: state.view,
+      showInfo: state.showInfo,
       correctAnswer: action.correctAnswer,
       feedback: state.feedback,
       guesses: state.guesses
     })
   } else if (action.type === actions.TOGGLE_INFO) {
     return Object.assign({}, state, {
-      view: !state.showInfo
+      showInfo: !(state.showInfo)
     })
   } else if (action.type === actions.SUBMIT) {
       return Object.assign({}, state, {
@@ -45,7 +45,7 @@ export const hotColdReducer = (state=initialState, action) => {
     }
 
   return state;
-  
+
   // else if (action.type === actions.WHAT_BUTTON) {
   //   return Object.assign({}, state, {
   //     view: action.view

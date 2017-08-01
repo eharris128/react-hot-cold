@@ -61,7 +61,7 @@ export default class Game extends React.Component {
           feedback={this.state.feedback}
           onGuess={guess => this.guess(guess)}
         />
-        <GuessCount count={this.state.guesses.length} />
+        <GuessCount />
         <GuessList guesses={this.state.guesses} />
       </div>
     );
